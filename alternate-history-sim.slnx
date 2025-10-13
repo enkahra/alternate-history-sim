@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="alternate-history-sim/alternate-history-sim.vcxproj" />
+  <Project Path="alternate-history-sim/alternate-history-sim.vcxproj" Id="8850cb81-443a-4e14-b723-c924eaaca7aa" />
 </Solution>
