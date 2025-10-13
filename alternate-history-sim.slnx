@@ -3,5 +3,7 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
+  <Project Path="alternate-history-sim.App/alternate-history-sim.App.vcxproj" Id="72a56d48-aa5c-4601-85f9-28b08497ae0f" />
+  <Project Path="alternate-history-sim.Tests/alternate-history-sim.Tests.vcxproj" Id="cb852406-f9e3-4a3f-ab31-8ce3ec4dc3af" />
   <Project Path="alternate-history-sim/alternate-history-sim.vcxproj" Id="8850cb81-443a-4e14-b723-c924eaaca7aa" />
 </Solution>
