@@ -32,6 +32,23 @@ std::string SentenceProcessor::getFirstWord() const
 	}
 }
 
+std::vector<std::string> SentenceProcessor::getActionWords() const
+{
+	std::vector<std::string> actionWords;
+	if (!isValid())
+	{
+		return actionWords; // Return empty vector
+	}
+	else
+	{
+		for (size_t i = 1; i < words.size(); i++)
+		{
+			actionWords.push_back(words[i]);
+		}
+	}
+	return actionWords;
+}
+
 std::string SentenceProcessor::getCountryFormatted() const
 {
 	std::string country = getFirstWord();

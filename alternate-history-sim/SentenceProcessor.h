@@ -14,13 +14,16 @@ public:
 
 	std::string getCountryFormatted() const;
 
-	std::string getActionWords() const; // This is for other words, implement later
+	std::vector<std::string> getActionWords() const; // This is for other words
 	
 	bool isValid() const;
 
 private:
 	std::vector<std::string> words;
 };
+
+
+
 
 
 
