@@ -127,6 +127,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="EventLoader.cpp" />
+    <ClCompile Include="FlagGenerator.cpp" />
     <ClCompile Include="SentenceProcessor.cpp" />
     <ClCompile Include="Utils.cpp" />
   </ItemGroup>
@@ -134,6 +136,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="EventLoader.h" />
+    <ClInclude Include="FlagGenerator.h" />
     <ClInclude Include="SentenceProcessor.h" />
     <ClInclude Include="Utils.h" />
   </ItemGroup>

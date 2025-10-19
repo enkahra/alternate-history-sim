@@ -1,9 +1,12 @@
 #include <iostream>
 #include <string>
+#include <iomanip>
 
-// Includes: use relative paths to the library project
+// Includes
 #include "../alternate-history-sim/SentenceProcessor.h"
 #include "../alternate-history-sim/Utils.h"
+#include "../alternate-history-sim/FlagGenerator.h"
+#include "../alternate-history-sim/EventLoader.h"
 
 int main()
 {
@@ -40,6 +43,50 @@ int main()
     else
     {
         std::cout << "No valid input provided!" << std::endl;
+    }
+
+    // ============= Day 3: CSV Loading =============
+    std::cout << "\n--- Loading Historical Events from CSV ---" << std::endl;
+
+    // Define CSV path (relative to executable location)
+    // Try multiple paths to handle different working directories
+    std::string CSV_PATH = "events.csv";  // First try: same directory as executable
+    
+    // Create EventLoader and load events
+    EventLoader loader;
+    auto eventMap = loader.loadFromCSV(CSV_PATH);
+    
+    // If not found, try relative paths
+    if (eventMap.empty()) {
+        CSV_PATH = "../../data/events.csv";  // From x64/Debug to solution root
+        eventMap = loader.loadFromCSV(CSV_PATH);
+    }
+    
+    if (eventMap.empty()) {
+        CSV_PATH = "../data/events.csv";  // Alternative path
+        eventMap = loader.loadFromCSV(CSV_PATH);
+    }
+
+    // Check if loading succeeded
+    if (eventMap.empty())
+    {
+        std::cerr << "Error: " << loader.getLastError() << std::endl;
+        std::cerr << "Note: CSV file should be at: " << CSV_PATH << std::endl;
+    }
+    else
+    {
+        std::cout << "Successfully loaded " << eventMap.size() << " events." << std::endl;
+        std::cout << "\nHistorical Events:" << std::endl;
+        std::cout << std::string(50, '-') << std::endl;
+
+        // Print each event with formatted probability
+        for (const auto& pair : eventMap)
+        {
+            std::cout << "Event: " << pair.second.name
+                      << " - Probability: " << std::fixed << std::setprecision(2)
+                      << pair.second.probability << std::endl;
+        }
+        std::cout << std::string(50, '-') << std::endl;
     }
 
     return 0;

@@ -3,6 +3,7 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
+  <Folder Name="/Data/" />
   <Folder Name="/Solution Items/">
     <File Path=".gitignore" />
     <File Path="README.md" />
