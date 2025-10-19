@@ -1,8 +1,9 @@
 #include <iostream>
 #include <string>
-// Local header for sentence processing
-#include "SentenceProcessor.h"
-#include "Utils.h"
+
+// Includes: use relative paths to the library project
+#include "../alternate-history-sim/SentenceProcessor.h"
+#include "../alternate-history-sim/Utils.h"
 
 int main()
 {
